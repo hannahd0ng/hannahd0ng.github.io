@@ -1,0 +1,97 @@
+*{
+	margin:0;
+	padding:0;
+}
+/* 1. 定义自定义字体 */
+@font-face {
+	font-family: 'CourierPrime';       /* 自定义的字体名称 */
+	src: url('../font/CourierPrime-Regular.ttf') format('truetype');  /* 字体文件路径和格式 */
+	font-weight: normal;
+	font-style: normal;
+}
+html{
+	width:100%;
+}
+body {
+	width:100%;
+	font-family: 'CourierPrime', sans-serif;
+	background:#000;
+}
+
+/*装饰条*/
+.decoration {
+	width: 100%;
+	overflow: hidden;
+	background: #c4c32c; 
+	height: 80px;
+}
+.decoration.bg1{
+	background-image:url(../images/bg1.jpg);
+	background-position:0 -550px;
+	background-size:100% auto;
+}
+/* 滚动轨道 */
+.star-track {
+	display: flex;
+	flex-wrap: nowrap;
+	animation: scroll-left 15s linear infinite;
+}
+
+/* 单个星星 */
+.star{
+    flex-shrink: 0;
+	width:110px;
+	height:80px;
+	background-image:url(../images/star.png);
+	background-size:30px auto;
+	background-repeat:no-repeat;
+	background-position:center center;
+	float:left;
+}
+
+/* 滚动动画 */
+@keyframes scroll-left {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+.txtbox{
+	width:100%;
+	border-top:10px solid #4A2350;
+	color:#Fff;
+	text-align:center;
+	padding-top:40px;
+}
+.txtbox h2{
+	width:700px;
+	margin:0 auto;
+	font-size:35px;
+	padding-bottom:20px;
+}
+.txtbox p{
+	width:700px;
+	margin:0 auto;
+	font-size:20px;
+}
+.back{
+	position:fixed;
+	bottom:20px;
+	right:0px;
+	width:60px;
+	height:40px;
+	color:#fff;
+	text-align:center;
+	line-height:40px;
+	background:#E81F27;
+	display:block;
+	text-decoration:none;
+}
+.txtbox .indent{
+	text-align:left;
+	width:880px;
+	padding-left: 4em;     /* 所有行整体右移 2 字符宽 */
+	text-indent: -4em;     /* 第一行左移 2 字符宽，相当于“取消缩进” */
+}
